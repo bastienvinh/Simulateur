@@ -1,0 +1,8 @@
+Epargne/bin
+Epargne/obj
+Simulateur/Simulateur.Windows/bin/*
+Simulateur/Simulateur.Windows/obj/*
+Simulateur/Simulateur.WindowsPhone/bin/*
+Simulateur/Simulateur.WindowsPhone/obj/*
+Test/bin/*
+Test/obj/*

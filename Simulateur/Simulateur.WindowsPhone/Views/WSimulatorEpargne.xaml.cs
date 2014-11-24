@@ -13,28 +13,27 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Simulateur
+// Pour en savoir plus sur le modèle d’élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkID=390556
+
+namespace Simulateur.Views
 {
 	/// <summary>
 	/// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
 	/// </summary>
-	public sealed partial class MainPage : Page
+	public sealed partial class WSimulatorEpargne : Page
 	{
-		public MainPage()
+		public WSimulatorEpargne()
 		{
 			this.InitializeComponent();
-
-			this.NavigationCacheMode = NavigationCacheMode.Required;
 		}
 
 		/// <summary>
 		/// Invoqué lorsque cette page est sur le point d'être affichée dans un frame.
 		/// </summary>
-		/// <param name="e">Données d’événement décrivant la manière dont l’utilisateur a accédé à cette page.
+		/// <param name="e">Données d'événement décrivant la manière dont l'utilisateur a accédé à cette page.
 		/// Ce paramètre est généralement utilisé pour configurer la page.</param>
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
-
 		}
 	}
 }
