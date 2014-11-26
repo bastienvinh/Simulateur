@@ -1,0 +1,33 @@
+﻿<Page
+		x:Class="Simulateur.Views.WSimulatorEpargne"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="using:Simulateur.Views"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
+		Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+	<Grid>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="10"  />
+			<ColumnDefinition Width="150"  />
+			<ColumnDefinition Width="*"  />
+			<ColumnDefinition Width="10"  />
+		</Grid.ColumnDefinitions>
+		
+		
+		<Grid.RowDefinitions>
+			<RowDefinition Height="10" />
+			<RowDefinition Height="50" />
+			<RowDefinition Height="40" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="10" />
+		</Grid.RowDefinitions>
+		
+		<TextBlock Style="{ StaticResource SimulatorLabelTitleApplicationonPage }" Grid.Row="1" Grid.Column="2" Text="Simulateur" />
+		<TextBlock Style="{ StaticResource SimulatorLabelSubTitleApplicationonPage }" Grid.Row="2" Grid.Column="2" Text="Epargne Jeune" />
+
+	</Grid>
+</Page>
