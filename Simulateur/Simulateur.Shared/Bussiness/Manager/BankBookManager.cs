@@ -1,6 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+using Windows.Data.Json;
+using Windows.Storage;
 using Simulateur.Data;
+using Simulateur.Data.BLL;
 
 namespace Simulateur.Bussiness
 {
@@ -13,18 +20,9 @@ namespace Simulateur.Bussiness
 			get { return __bankBooks; }
 		}
 
-		public static void LoadAllDatas()
+		public async static Task LoadAllDatasAsync()
 		{
-			// TODO ; Complete this
-			// fill __bankbook
-		}
-
-
-		public static void LoadAllDatas(string jsonFile)
-		{
-			
-			
-
+			__bankBooks = await BLLBankBooks.GetAllAsync();
 		}
 
 	}

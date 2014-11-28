@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows.Input;
 using Windows.ApplicationModel.Resources;
 using Windows.UI.Xaml.Controls;
+using Simulateur.Bussiness;
 using Simulateur.Common;
+using Simulateur.Data;
+using Simulateur.Data.Utils;
 using Simulateur.Navigation;
 
 namespace Simulateur.ViewModels
@@ -21,12 +25,13 @@ namespace Simulateur.ViewModels
 		#region Attributes
 
 		private static readonly ObservableCollection<MenuNavigation> __navigationMenu;
-		private MenuNavigation _selectedMenu;
+		private MenuNavigation _selectedMenu; 
 
 
 		// Commands
 
 		private ICommand _selectedMenuCommand;
+		private ICommand _loadCommand;
 
 		#endregion
 
@@ -45,6 +50,7 @@ namespace Simulateur.ViewModels
 
 
 		public ICommand SelectedMenuCommand { get { return _selectedMenuCommand; } }
+		public ICommand LoadCommand { get { return _loadCommand; } }
 
 		#endregion
 
@@ -75,18 +81,14 @@ namespace Simulateur.ViewModels
 				View = Type.GetType("Simulateur.Views.WSimulatorHelp")
 			});
 
-
-
 		}
 
 
 		public VMMain()
 		{
-			_selectedMenu = null;
-
 			// Initialisation commands
 			_selectedMenuCommand = new RelayCommand(SelectMenu);
-
+			_loadCommand = new RelayCommand(Load);
 		}
 
 		#endregion
@@ -95,7 +97,8 @@ namespace Simulateur.ViewModels
 
 		private static void ShowPage(MenuNavigation menu)
 		{
-			
+			// We open Another on current frame
+			NavigatorHelper.NavigateTo( menu.View );
 		}
 
 		#endregion
@@ -103,9 +106,24 @@ namespace Simulateur.ViewModels
 
 		#region Events
 
+
+		private async void Load()
+		{
+			// we must have internet to do something
+			if (NetworkInterface.GetIsNetworkAvailable())
+			{
+				// We load all datas
+				await BankBookManager.LoadAllDatasAsync();
+
+				// Be careful at this point, we don't know when we execute this. 
+				// TODO : Make a pending image for loading datas / If something happen use cache datas
+			}
+		}
+
 		private void SelectMenu()
 		{
-			ShowPage(SelectedMenu);
+			if (SelectedMenu != null)
+				ShowPage(SelectedMenu);
 		}
 
 		#endregion

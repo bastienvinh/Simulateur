@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -12,6 +9,21 @@ namespace Simulateur.UI
 		public static readonly DependencyProperty CommandProperty =
 			DependencyProperty.RegisterAttached("Command", typeof (ICommand),
 				typeof (ItemClickCommand), new PropertyMetadata(null, OnCommandPropertyChanged));
+
+
+		public static readonly DependencyProperty SelectedValueProperty = DependencyProperty.RegisterAttached(
+			"SelectedValue", typeof(object), typeof(ItemClickCommand), new PropertyMetadata(default(object)));
+
+
+		public static void SetSelectedValue(DependencyObject d, object value)
+		{
+			d.SetValue(SelectedValueProperty, value);
+		}
+
+		public static object GetSelectedValue(DependencyObject d)
+		{
+			return d.GetValue(SelectedValueProperty);
+		}
 
 		public static void SetCommand(DependencyObject d, ICommand value)
 		{
@@ -34,10 +46,14 @@ namespace Simulateur.UI
 		private static void OnItemClick(object sender, ItemClickEventArgs e)
 		{
 			var control = sender as ListViewBase;
-			var command = GetCommand(control);
+			if (control != null)
+			{
+				var command = GetCommand(control);
+				SetSelectedValue(control, e.ClickedItem );
 
-			if (command != null && command.CanExecute(e.ClickedItem))
-				command.Execute(e.ClickedItem);
+				if (command != null && command.CanExecute(e.ClickedItem))
+					command.Execute(e.ClickedItem);
+			}
 		}
 	}
 }

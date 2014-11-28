@@ -23,7 +23,6 @@ namespace Simulateur.Navigation
 			{
 				// TODO : Verifiy that value descend from type Page
 				_view = value;
-				
 			}
 		}
 
@@ -73,7 +72,4 @@ namespace Simulateur.Navigation
 
 		#endregion
 	}
-
-
-
 }
