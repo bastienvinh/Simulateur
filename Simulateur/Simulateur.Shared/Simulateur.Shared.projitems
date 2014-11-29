@@ -16,6 +16,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Bussiness\Manager\BankBookManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bussiness\ResultFilter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\NavigatorHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\ViewModelBase.cs" />
@@ -27,6 +28,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)UI\ItemClickCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VMMain.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VMSimulatorEpargne.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VMSimulatorEpargneResultat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VMSimulatorHelp.cs" />
   </ItemGroup>
   <ItemGroup>

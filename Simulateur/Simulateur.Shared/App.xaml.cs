@@ -1,26 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Storage.Search;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
-
-// Pour plus d'informations sur le modèle Application vide, consultez la page http://go.microsoft.com/fwlink/?LinkId=234227
-using Simulateur.Bussiness;
-using Simulateur.Data.Utils;
 
 namespace Simulateur
 {
@@ -96,10 +80,17 @@ namespace Simulateur
 				rootFrame.Navigated += this.RootFrame_FirstNavigated;
 #endif
 
-				if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
+				// TODO : decomment this
+				//if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
+				//{
+				//	throw new Exception("Failed to create initial page");
+				//}
+
+				if (!rootFrame.Navigate(typeof(Views.WSimulatorEpargneResult), e.Arguments))
 				{
 					throw new Exception("Failed to create initial page");
 				}
+
 			}
 
 			// Vérifiez que la fenêtre actuelle est active
