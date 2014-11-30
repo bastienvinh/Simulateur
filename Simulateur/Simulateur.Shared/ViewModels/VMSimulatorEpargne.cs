@@ -171,7 +171,7 @@ namespace Simulateur.ViewModels
 		{
 			_isAStudent = true;
 			_degreeLevels = new ObservableCollection<DegreeLevel>( FilterInformationsManager.GetDegrees() );
-
+			_customInformations = new ObservableCollection<CustomInformation>( FilterInformationsManager.GetInformations() );
 
 			// Filter information
 
@@ -185,8 +185,20 @@ namespace Simulateur.ViewModels
 		#region Operations
 		public void NextEvent()
 		{
-			// TODO : verify that datas is computed correctly
-			Filter filter = new Filter();
+			// TODO : verify that datas
+			
+			// Create datas filter
+			Filter filter = new Filter
+			{
+				CustomInformations = _selectedCustomInformation,
+				Capital = _capital,
+				Degree = _selectedDegree,
+				Deposit = _deposit,
+				Duration = _duration,
+				NbChilds = _nbChilds,
+				IsAStudent = _isAStudent,
+				MonthPay = _monthPay
+			};
 
 			// We store datas to pass on another Page (View Model's Page)
 			TrashData.Store( "FilterSimulator",  filter);

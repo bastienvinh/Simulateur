@@ -40,9 +40,9 @@ namespace Simulateur.Data.Utils
 		#region Attributes
 
 		// TODO : Don't forget ot change your configuration and add ID on another file and to fill it
-		private static MobileServiceClient __mobileService = new MobileServiceClient(
-			""
-	 );
+		private readonly static MobileServiceClient __mobileService = new MobileServiceClient(
+					 ""
+		 );
 
 		#endregion
 

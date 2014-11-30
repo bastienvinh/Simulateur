@@ -5,6 +5,7 @@
 
 	<converter:StudentVisibilityConverter x:Key="StudentVisibilityConverter" />
 	<converter:DecimalConverter x:Key="DecimalConverter" />
+	<converter:DoubleToDecimalConverter x:Key="DoubleToDecimalConverter" />
 	
 	<!-- region All Styles -->
 	

@@ -18,7 +18,6 @@ namespace Simulateur.ViewModels
 		private static readonly string __labelSubtitle;
 		#endregion
 
-
 		#region Attributes
 		private readonly ObservableCollection<ResultFilter> _results;
 		#endregion
@@ -29,7 +28,6 @@ namespace Simulateur.ViewModels
 		{
 			get { return __labelResult; }
 		}
-
 
 		public string LabelTitle { get { return __labelTitle; } }
 
@@ -53,7 +51,6 @@ namespace Simulateur.ViewModels
 
 		public VMSimulatorEpargneResultat()
 		{
-
 			Filter currentFilter = null;
 
 			try
@@ -62,13 +59,11 @@ namespace Simulateur.ViewModels
 			}
 			catch
 			{
-
 				// TODO : remove Comment, it's just for test
 				//throw new ElementNotAvailableException("Must have a filter on trash");
 			}
 
 			// List<BankBook> results = BankBookManager.GetListByFilter(currentFilter);
-
 			// _results =  TrasnformListBanbookfromFilters(results, currentFilter )
 
 				#region Examples
@@ -76,7 +71,6 @@ namespace Simulateur.ViewModels
 			{
 				new ResultFilter
 				{
-
 					BankBook = new BankBook
 					{
 						Id = Guid.NewGuid().ToString(),
@@ -94,7 +88,6 @@ namespace Simulateur.ViewModels
 				},
 				new ResultFilter
 				{
-
 					BankBook = new BankBook
 					{
 						Id = Guid.NewGuid().ToString(),
@@ -123,7 +116,6 @@ namespace Simulateur.ViewModels
 		private static List<ResultFilter> TrasnformListBanbookfromFilters(List<BankBook> bankbooks, Filter f)
 		{
 			List<ResultFilter> newListsRes = new List<ResultFilter>();
-
 
 			if (bankbooks != null)
 			{

@@ -9,6 +9,7 @@ using Windows.UI.Xaml.Media;
 
 namespace Simulateur.UI
 {
+	// Don't mind this class, just to create event for scrolling bot at end
 	public class ScrollViewerMonitor
 	{
 		public static DependencyProperty AtEndCommandProperty

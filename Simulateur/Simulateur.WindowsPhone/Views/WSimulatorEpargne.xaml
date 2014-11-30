@@ -15,9 +15,9 @@
 
 	<Page.Resources>
 		<ResourceDictionary>
-		<ResourceDictionary.MergedDictionaries>
-			<ResourceDictionary Source="/Ressources/SimulatorEpargne.xaml" />
-		</ResourceDictionary.MergedDictionaries>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Ressources/SimulatorEpargne.xaml" />
+			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Page.Resources>
 
@@ -60,7 +60,7 @@
 			Grid.Column="0" Grid.ColumnSpan="3"
 			Grid.Row="3">
 			<Grid>
-				
+
 				<!-- region Definitions -->
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="10" />
@@ -94,18 +94,19 @@
 					x:Name="SimulatorSwitchIsStudent"
 					OffContent="{Binding LabelSwitchOffOtherChoice}" 						
 					OnContent="{Binding LabelSwitchOnStudentChoice}" 
-					IsOn="{ Binding IsAStudent }"	Grid.Column="1" Grid.Row="2" />
-				
+					IsOn="{ Binding IsAStudent, Mode=TwoWay }"	Grid.Column="1" Grid.Row="2" />
+
 				<TextBlock
 					Style="{StaticResource SimulatorLabelSection}"
 					Grid.Column="1" Grid.Row="3"
 					Text="Niveau Etude" />
-				
+
 				<ComboBox
 					ItemsSource="{Binding DegreesLevels}"
+					SelectedItem="{ Binding SelectedDegree, Mode=TwoWay }"
 					DisplayMemberPath="Name"
 					Grid.Column="1" Grid.Row="4" />
-				
+
 				<!--Visibility="{Binding ElementName=SimulatorSwitchIsStudent, Converter=}"-->
 				<TextBlock
 					Visibility="{ Binding ElementName=SimulatorSwitchIsStudent, Path=IsOn, Converter={ StaticResource StudentVisibilityConverter } }"
@@ -120,45 +121,49 @@
 					Grid.Row="6">
 					<Slider
 						x:Name="SimulatorSliderNbChilren"
+						Value="{ Binding NbChilds, Mode=TwoWay }"
 						Style="{ StaticResource SimulatorStackChoiceSlide }" 
 						Minimum="{Binding MinChildren}" Maximum="{Binding MaxChildren}" />
 					<TextBlock Style="{StaticResource SimulatorStackChoiceSilderText}" Text="{Binding ElementName=SimulatorSliderNbChilren, Path=Value }"/>
 				</StackPanel>
-				
-				
+
+
 				<TextBlock
 					Style="{StaticResource SimulatorLabelSection}"
 					Grid.Column="1" Grid.Row="7" 
 					Text="Besoins" />
-				
+
 				<ComboBox 
 					ItemsSource="{Binding CustomInformations}"
+					DisplayMemberPath="Label"
+					SelectedItem="{ Binding SelectedCustomInformation, Mode=TwoWay }"
 					Grid.Column="1" Grid.Row="8"  />
 
 				<TextBlock
 					Style="{StaticResource SimulatorLabelSection}"
 					Grid.Column="1" Grid.Row="9" 
 					Text="Budget" />
-				
+
 				<TextBox InputScope="Number" 
 					Grid.Column="1" Grid.Row="10" 
-			Text="{Binding Capital, Mode=TwoWay, Converter={ StaticResource DecimalConverter }}" />
-				
+					Text="{Binding Capital, Mode=TwoWay, Converter={ StaticResource DecimalConverter }}" />
+
 				<TextBlock
 					Style="{StaticResource SimulatorLabelSection}"
 					Grid.Column="1" 
 					Grid.Row="11" Text="Depot" />
 
 				<StackPanel Grid.Column="1" Grid.Row="12" Orientation="Horizontal">
-					<Slider x:Name="SimulatorSliderDepotPerMonth" 
+					<Slider x:Name="SimulatorSliderDepotPerMonth"
 						Style="{ StaticResource SimulatorStackChoiceSlide }"
 						TickFrequency="100"
-						Maximum="{ Binding MaxPayPerMonth }" Minimum="{ Binding MinPayPerMonth }" />
+						Maximum="{ Binding MaxPayPerMonth }" Minimum="{ Binding MinPayPerMonth }"
+						Value="{Binding MonthPay, Mode=TwoWay, Converter={ StaticResource DoubleToDecimalConverter }}" />
 					<TextBlock
 						Style="{StaticResource SimulatorStackChoiceSilderText}" 
 						Text="{ Binding ElementName=SimulatorSliderDepotPerMonth, Path=Value }"  />
 				</StackPanel>
-				
+
 				<TextBlock
 					Style="{StaticResource SimulatorLabelSection}"
 					Grid.Column="1" Grid.Row="13" 
@@ -167,7 +172,8 @@
 				<StackPanel Grid.Column="1" Grid.Row="14" Orientation="Horizontal">
 					<Slider x:Name="SimualatorSliderYearDuration" 
 						Minimum="{ Binding MinDuration }" Maximum="{ Binding MaxDuration }"
-						Style="{ StaticResource SimulatorStackChoiceSlide }" />
+						Style="{ StaticResource SimulatorStackChoiceSlide }"
+						Value="{Binding Duration, Mode=TwoWay}"/>
 					<TextBlock
 						Style="{StaticResource SimulatorStackChoiceSilderText}"  
 						Text="{ Binding ElementName=SimualatorSliderYearDuration, Path=Value }" />
