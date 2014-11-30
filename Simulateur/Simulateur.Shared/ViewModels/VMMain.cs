@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows.Input;
 using Windows.ApplicationModel.Resources;
 using Windows.UI.Xaml.Controls;
-using Simulateur.Bussiness;
+using Simulateur.Business;
 using Simulateur.Common;
-using Simulateur.Data;
-using Simulateur.Data.Utils;
 using Simulateur.Navigation;
 
 namespace Simulateur.ViewModels

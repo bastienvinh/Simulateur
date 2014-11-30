@@ -15,9 +15,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Bussiness\Filter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Bussiness\Manager\BankBookManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Bussiness\ResultFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\Filter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\Manager\BankBookManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\ResultFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\Utils\TemporyDatasMangement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\NavigatorHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\ViewModelBase.cs" />
@@ -34,7 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Bussiness\Utils\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
   <ItemGroup>

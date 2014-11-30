@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using Windows.ApplicationModel.Resources;
-using Simulateur.Bussiness;
+using Simulateur.Business;
 using Simulateur.Data;
 
 namespace Simulateur.ViewModels

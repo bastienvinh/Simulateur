@@ -80,13 +80,7 @@ namespace Simulateur
 				rootFrame.Navigated += this.RootFrame_FirstNavigated;
 #endif
 
-				// TODO : decomment this
-				//if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
-				//{
-				//	throw new Exception("Failed to create initial page");
-				//}
-
-				if (!rootFrame.Navigate(typeof(Views.WSimulatorEpargneResult), e.Arguments))
+				if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
 				{
 					throw new Exception("Failed to create initial page");
 				}
