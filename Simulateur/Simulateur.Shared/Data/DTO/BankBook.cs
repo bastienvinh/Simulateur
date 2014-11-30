@@ -14,5 +14,6 @@ namespace Simulateur.Data
 		public decimal MinimumMoney { get; set; }
 		public decimal MinTransferPayment { get; set; }
 		public bool IsIllimited { get; set; }
+        public decimal PricePerMonth { get; set; }
 	}
 }
