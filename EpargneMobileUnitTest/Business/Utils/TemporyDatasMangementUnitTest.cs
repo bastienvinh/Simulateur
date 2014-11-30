@@ -13,10 +13,6 @@ namespace EpargneMobileUnitTest.Business.Utils
 	[TestClass]
 	public class TemporyDatasMangementUnitTest
 	{
-
-
-
-
 		[Fact]
 		public void CountDatas()
 		{
@@ -24,6 +20,17 @@ namespace EpargneMobileUnitTest.Business.Utils
 			TemporyDatasMangement.Store("toto", "lala");
 			TemporyDatasMangement.Store("pepe", "lala");
 			TemporyDatasMangement.Store("jiji", "lala");
+			TemporyDatasMangement.Store("toto", "meme");
+			TemporyDatasMangement.Store("lala", "lala");
+			TemporyDatasMangement.Store("toto", "lala");
+			TemporyDatasMangement.Store("pepe", "lala");
+			TemporyDatasMangement.Store("jiji", "lala");
+			TemporyDatasMangement.Store("toto", "meme");
+			TemporyDatasMangement.Store("lala", "lala");
+			TemporyDatasMangement.Store("toto", "lala");
+			TemporyDatasMangement.Store("pepe", "lala");
+			TemporyDatasMangement.Store("jiji", "lala");
+			TemporyDatasMangement.Store("toto", "meme");
 
 			Assert.Equal( TemporyDatasMangement.Count, 4 );
 		}

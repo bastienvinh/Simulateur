@@ -44,22 +44,19 @@
 		<!-- endregion -->
 
 		<!-- Title -->
-		<TextBlock Style="{ StaticResource SimulatorLabelTitleApplicationonPage }" Grid.Row="1" Grid.Column="2" Text="Simulateur" />
+		<TextBlock Style="{ StaticResource SimulatorLabelTitleApplicationonPage }" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Simulateur"  />
 		<TextBlock Style="{ StaticResource SimulatorLabelSubTitleApplicationonPage }" Grid.Row="2" Grid.Column="2" Text="Epargne Jeune" />
 
-
 		<!-- Next button -->
-		<Button Grid.Row="5" 
-			VerticalAlignment="Center" HorizontalAlignment="Center" 
-			Padding="0"
-			Width="300"
-			Background="Teal" 
+		<Button Grid.Row="5"
+			Command="{ Binding NextEventCommand }"
+			
+			Style="{ StaticResource SimulatorButtonNext }" 
 			Grid.Column="1" Grid.ColumnSpan="2" 
 			Content="Suivant" />
 
-
 		<!-- Filter Zone -->
-		<ScrollViewer 
+		<ScrollViewer
 			Grid.Column="0" Grid.ColumnSpan="3"
 			Grid.Row="3">
 			<Grid>
@@ -92,31 +89,73 @@
 				</Grid.RowDefinitions>
 				<!-- endregion -->
 
-				<TextBlock Text="Informations" Grid.Column="1" Grid.Row="1" />
+				<TextBlock Style="{StaticResource SimulatorLabelSection}" Text="Informations" Grid.Column="1" Grid.Row="1" />
 				<ToggleSwitch
+					x:Name="SimulatorSwitchIsStudent"
 					OffContent="{Binding LabelSwitchOffOtherChoice}" 						
 					OnContent="{Binding LabelSwitchOnStudentChoice}" 
 					IsOn="{ Binding IsAStudent }"	Grid.Column="1" Grid.Row="2" />
 				
-				<TextBlock Grid.Column="1" Grid.Row="3" Text="Niveau Etude" />
-				<ComboBox Grid.Column="1" Grid.Row="4" />
+				<TextBlock
+					Style="{StaticResource SimulatorLabelSection}"
+					Grid.Column="1" Grid.Row="3"
+					Text="Niveau Etude" />
 				
-				<TextBlock Grid.Column="1" Grid.Row="5" Text="Enfants a charges" />
+				<ComboBox
+					ItemsSource="{Binding DegreesLevels}"
+					DisplayMemberPath="Name"
+					Grid.Column="1" Grid.Row="4" />
 				
-				<Slider Grid.Column="1" Grid.Row="6" />
-				
-				<TextBlock Grid.Column="1" Grid.Row="7" Text="Besoins" />
-				<ComboBox Grid.Column="1" Grid.Row="8"  />
+				<!--Visibility="{Binding ElementName=SimulatorSwitchIsStudent, Converter=}"-->
+				<TextBlock
+					Visibility="{ Binding ElementName=SimulatorSwitchIsStudent, Path=IsOn, Converter={ StaticResource StudentVisibilityConverter } }"
+					Style="{ StaticResource SimulatorLabelSection }"
+					Grid.Column="1" Grid.Row="5" 
+					Text="Enfants a charges" />
 
-				<TextBlock Grid.Column="1" Grid.Row="9" Text="Budget" />
+				<StackPanel 
+					Visibility="{ Binding ElementName=SimulatorSwitchIsStudent, Path=IsOn, Converter={ StaticResource StudentVisibilityConverter } }"
+					Grid.Column="1" 
+					Orientation="Horizontal" 
+					Grid.Row="6">
+					<Slider
+						x:Name="SimulatorSliderNbChilren"
+						Style="{ StaticResource SimulatorStackChoiceSlide }" 
+						Minimum="{Binding MinChildren}" Maximum="{Binding MaxChildren}" />
+					<TextBlock Style="{StaticResource SimulatorStackChoiceSilderText}" Text="{Binding ElementName=SimulatorSliderNbChilren, Path=Value }"/>
+				</StackPanel>
+				
+				
+				<TextBlock
+					Style="{StaticResource SimulatorLabelSection}"
+					Grid.Column="1" Grid.Row="7" 
+					Text="Besoins" />
+				
+				<ComboBox 
+					ItemsSource="{Binding CustomInformations}"
+					Grid.Column="1" Grid.Row="8"  />
+
+				<TextBlock
+					Style="{StaticResource SimulatorLabelSection}"
+					Grid.Column="1" Grid.Row="9" 
+					Text="Budget" />
 				
 				<TextBox Grid.Column="1" Grid.Row="10" Text="0" />
 				
-				<TextBlock Grid.Column="1" Grid.Row="11" Text="Depot" />
+				<TextBlock
+					Style="{StaticResource SimulatorLabelSection}"
+					Grid.Column="1" 
+					Grid.Row="11" Text="Depot" />
+
+				<StackPanel Grid.Column="1" Grid.Row="12">
+					<Slider x:Name="SimulatorSliderDepotPerMonth"  />
+					<TextBlock />
+				</StackPanel>
 				
-				<Slider Grid.Column="1" Grid.Row="12" />
-				
-				<TextBlock Grid.Column="1" Grid.Row="13" Text="Annee" />
+				<TextBlock
+					Style="{StaticResource SimulatorLabelSection}"
+					Grid.Column="1" Grid.Row="13" 
+					Text="Annee" />
 
 				<Slider Grid.Column="1" Grid.Row="14" />
 			</Grid>

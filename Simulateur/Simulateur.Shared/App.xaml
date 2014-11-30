@@ -1,12 +1,12 @@
 ﻿<Application
 		x:Class="Simulateur.App"
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-		xmlns:local="using:Simulateur">
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"	
+	xmlns:local="using:Simulateur">
 	
 	<Application.Resources>
 		
-		<!-- Shared Standard Ressource -->
+		<!-- Shared Standard Ressource but for each device -->
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceDictionary Source="/Ressources/Default.xaml" />

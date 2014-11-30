@@ -15,13 +15,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Business\CustomInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\DegreeLevel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\Filter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\Manager\BankBookManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\Manager\FilterInformationsManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\ResultFilter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Business\Utils\TemporyDatasMangement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\Utils\TrashData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\NavigatorHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StudentVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\BLL\BLLBankBooks.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\DTO\BankBook.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\DTO\User.cs" />

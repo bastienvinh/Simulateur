@@ -13,6 +13,14 @@
 		<vm:VMSimulatorEpargneResultat />
 	</Page.DataContext>
 
+	<Page.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Ressources/SimulatorEpargneResult.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Page.Resources>
+
 	<Grid>
 		<!-- region Definitions -->
 		<Grid.ColumnDefinitions>
@@ -33,47 +41,54 @@
 		<!-- endregion -->
 
 		<!-- Title -->
-		<TextBlock Style="{ StaticResource SimulatorLabelTitleApplicationonPage }" Grid.Row="1" Grid.Column="2" Text="{Binding LabelTitle}" />
+		<TextBlock Style="{ StaticResource SimulatorLabelTitleApplicationonPage }" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding LabelTitle}" />
 		<TextBlock Style="{ StaticResource SimulatorLabelSubTitleApplicationonPage }" Grid.Row="2" Grid.Column="2" Text="{Binding LabelSubtitle}" />
 
-		<TextBlock Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Text="{Binding LabelResultat}" />
+		<TextBlock
+			Style="{ StaticResource SimulatorLabelSection }"
+			Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" 
+			Text="{Binding LabelResult }" />
 
 		<!-- Filter Zone -->
 		<ScrollViewer 
 			Grid.Column="0" Grid.ColumnSpan="4"
 			Grid.Row="4">
 			<ListView ItemsSource="{ Binding Results }">
-				
+
 				<!-- Move Template elsewhere -->
 				<ListView.ItemContainerStyle>
 					<Style TargetType="ListViewItem">
 						<Setter Property="HorizontalAlignment" Value="Stretch"/>
 					</Style>
 				</ListView.ItemContainerStyle>
-				
+
 				<ListView.ItemTemplate>
 					<DataTemplate>
-						<Grid>
-							
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="10" />
-								<ColumnDefinition Width="*" />
-								<ColumnDefinition Width="10" />
-							</Grid.ColumnDefinitions>
-							
-							<Grid.RowDefinitions>
-								<RowDefinition Height="2" />
-								<RowDefinition Height="*" />
-								<RowDefinition Height="*" />
-								<RowDefinition Height="*" />
-								<RowDefinition Height="2" />
-							</Grid.RowDefinitions>
-							
-							<TextBlock FontSize="20" Grid.Column="1" Grid.Row="1" Text="{Binding BankBook.Name}" />
-							<TextBlock Grid.Column="1" Grid.Row="2" Text="Taux : " /> <!-- use converter here -->
-							<TextBlock Grid.Column="1" Grid.Row="3" Text="Totale :" />
-						
-						</Grid>
+						<!-- Found the way to strech automatically -->
+						<Border BorderThickness="1" BorderBrush="Azure" HorizontalAlignment="Stretch">
+							<Grid Width="400">
+
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="10" />
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="10" />
+								</Grid.ColumnDefinitions>
+
+								<Grid.RowDefinitions>
+									<RowDefinition Height="2" />
+									<RowDefinition Height="*" />
+									<RowDefinition Height="*" />
+									<RowDefinition Height="*" />
+									<RowDefinition Height="2" />
+								</Grid.RowDefinitions>
+
+								<TextBlock FontSize="20" Grid.Column="1" Grid.Row="1" Text="{Binding BankBook.Name}" />
+								<TextBlock Grid.Column="1" Grid.Row="2" Text="Taux : " />
+								<!-- use converter here -->
+								<TextBlock Grid.Column="1" Grid.Row="3" Text="Totale :" />
+
+							</Grid>
+						</Border>
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>

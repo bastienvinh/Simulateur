@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using Windows.ApplicationModel.Resources;
+using Windows.UI.Xaml.Automation;
 using Simulateur.Business;
+using Simulateur.Business.Utils;
 using Simulateur.Data;
 
 namespace Simulateur.ViewModels
@@ -19,7 +22,7 @@ namespace Simulateur.ViewModels
 
 
 		#region Attributes
-		private ObservableCollection<ResultFilter> _results;
+		private readonly ObservableCollection<ResultFilter> _results;
 		#endregion
 
 
@@ -52,8 +55,25 @@ namespace Simulateur.ViewModels
 
 		public VMSimulatorEpargneResultat()
 		{
-			// TODO : Remove these / Just for example
-			#region Examples
+
+			Filter currentFilter = null;
+
+			try
+			{
+				currentFilter = TrashData.Get<Filter>("FilterSimulator");
+			}
+			catch
+			{
+
+				// TODO : remove Comment, it's just for test
+				//throw new ElementNotAvailableException("Must have a filter on trash");
+			}
+
+			// List<BankBook> results = BankBookManager.GetListByFilter(currentFilter);
+
+			// _results =  TrasnformListBanbookfromFilters(results, currentFilter )
+
+				#region Examples
 			_results = new ObservableCollection<ResultFilter>
 			{
 				new ResultFilter
@@ -97,6 +117,34 @@ namespace Simulateur.ViewModels
 
 			// This is for testing
 		}
+		#endregion
+
+
+		#region Utils
+
+		private static List<ResultFilter> TrasnformListBanbookfromFilters(List<BankBook> bankbooks, Filter f)
+		{
+			List<ResultFilter> newListsRes = new List<ResultFilter>();
+
+
+			if (bankbooks != null)
+			{
+				foreach (BankBook b in bankbooks)
+				{
+					newListsRes.Add(new ResultFilter
+					{
+						BankBook = b,
+						Capital = 0,
+						Total = 0,
+						PayperMonth = f.MonthPay,
+						Year = f.Duration
+					});
+				}
+			}
+
+			return new List<ResultFilter>();
+		}
+
 		#endregion
 
 	}

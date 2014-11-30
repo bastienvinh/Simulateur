@@ -2,8 +2,10 @@
 
 namespace Simulateur.Data
 {
-	public class User
-	{
 
-	}
+	// This class is useless for now
+	//public class User
+	//{
+
+	//}
 }

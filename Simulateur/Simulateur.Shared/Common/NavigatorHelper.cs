@@ -9,11 +9,10 @@ namespace Simulateur.Common
 	public static class NavigatorHelper
 	{
 
-
 		public static void NavigateTo(Type page)
 		{
-			((Frame) Window.Current.Content).Navigate(page);
+			Frame f = Window.Current.Content as Frame;
+			if (f != null) f.Navigate(page);
 		}
-
 	}
 }

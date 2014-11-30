@@ -22,8 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{23
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpargneAzureService", "EpargneAzureService\EpargneAzureService.csproj", "{34633ADC-5D80-4FA1-B66B-035AA8158F0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpargneMobileUnitTest", "EpargneMobileUnitTest\EpargneMobileUnitTest.csproj", "{C361A297-FCB8-4C58-B050-DAEF2E200D97}"
 EndProject
 Global
@@ -115,20 +113,6 @@ Global
 		{34633ADC-5D80-4FA1-B66B-035AA8158F0C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{34633ADC-5D80-4FA1-B66B-035AA8158F0C}.Release|x64.ActiveCfg = Release|Any CPU
 		{34633ADC-5D80-4FA1-B66B-035AA8158F0C}.Release|x86.ActiveCfg = Release|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Release|ARM.ActiveCfg = Release|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Release|x64.ActiveCfg = Release|Any CPU
-		{D69576AB-CB56-4AEB-B05B-CB4FDE2505F5}.Release|x86.ActiveCfg = Release|Any CPU
 		{C361A297-FCB8-4C58-B050-DAEF2E200D97}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{C361A297-FCB8-4C58-B050-DAEF2E200D97}.Debug|ARM.ActiveCfg = Debug|ARM
 		{C361A297-FCB8-4C58-B050-DAEF2E200D97}.Debug|ARM.Build.0 = Debug|ARM
