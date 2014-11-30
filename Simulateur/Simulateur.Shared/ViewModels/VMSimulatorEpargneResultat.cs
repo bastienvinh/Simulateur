@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using Windows.ApplicationModel.Resources;
-using Windows.UI.Xaml.Automation;
 using Simulateur.Business;
 using Simulateur.Business.Utils;
 using Simulateur.Data;
+using Simulateur.Models;
 
 namespace Simulateur.ViewModels
 {

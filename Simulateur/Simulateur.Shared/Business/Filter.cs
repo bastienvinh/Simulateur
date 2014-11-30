@@ -13,6 +13,8 @@ namespace Simulateur.Business
 		public int Duration { get; set; }
 		public decimal MonthPay { get; set; } 
 		public decimal Deposit { get; set; }
+		public DegreeLevel Degree { get; set; }
+		public CustomInformation CustomInformations { get; set; }
 
 
 		public Filter()

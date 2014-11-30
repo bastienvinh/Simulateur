@@ -6,11 +6,20 @@ namespace Simulateur.Business.Manager
 {
 	public static class FilterInformationsManager
 	{
+
+		#region Constants
 		public const int MAX_CHILDREN = 5;
 		public const int MIN_CHILDREN = 0;
 
+		public const decimal MAX_PER_MONTH = 2000;
+		public const decimal MIN_PER_MONTH = 100;
 
+		public const int MIN_DURATION = 1;
+		public const int MAX_DURATION = 15;
 
+		#endregion
+
+		#region Attributes
 		private readonly static List<DegreeLevel> __degreeLevels = new List<DegreeLevel>
 		{
 
@@ -31,6 +40,10 @@ namespace Simulateur.Business.Manager
 			new CustomInformation { Id = Guid.NewGuid().ToString(), Label = "Creer une nouvel association" }
 		};
 
+		#endregion
+
+		#region Operations
+
 		public static List<DegreeLevel> GetDegrees()
 		{
 			return __degreeLevels;
@@ -41,6 +54,8 @@ namespace Simulateur.Business.Manager
 		{
 			return __customInformations;
 		}
+
+		#endregion
 
 	}
 }

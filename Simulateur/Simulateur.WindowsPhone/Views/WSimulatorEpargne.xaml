@@ -140,16 +140,23 @@
 					Grid.Column="1" Grid.Row="9" 
 					Text="Budget" />
 				
-				<TextBox Grid.Column="1" Grid.Row="10" Text="0" />
+				<TextBox InputScope="Number" 
+					Grid.Column="1" Grid.Row="10" 
+			Text="{Binding Capital, Mode=TwoWay, Converter={ StaticResource DecimalConverter }}" />
 				
 				<TextBlock
 					Style="{StaticResource SimulatorLabelSection}"
 					Grid.Column="1" 
 					Grid.Row="11" Text="Depot" />
 
-				<StackPanel Grid.Column="1" Grid.Row="12">
-					<Slider x:Name="SimulatorSliderDepotPerMonth"  />
-					<TextBlock />
+				<StackPanel Grid.Column="1" Grid.Row="12" Orientation="Horizontal">
+					<Slider x:Name="SimulatorSliderDepotPerMonth" 
+						Style="{ StaticResource SimulatorStackChoiceSlide }"
+						TickFrequency="100"
+						Maximum="{ Binding MaxPayPerMonth }" Minimum="{ Binding MinPayPerMonth }" />
+					<TextBlock
+						Style="{StaticResource SimulatorStackChoiceSilderText}" 
+						Text="{ Binding ElementName=SimulatorSliderDepotPerMonth, Path=Value }"  />
 				</StackPanel>
 				
 				<TextBlock
@@ -157,7 +164,14 @@
 					Grid.Column="1" Grid.Row="13" 
 					Text="Annee" />
 
-				<Slider Grid.Column="1" Grid.Row="14" />
+				<StackPanel Grid.Column="1" Grid.Row="14" Orientation="Horizontal">
+					<Slider x:Name="SimualatorSliderYearDuration" 
+						Minimum="{ Binding MinDuration }" Maximum="{ Binding MaxDuration }"
+						Style="{ StaticResource SimulatorStackChoiceSlide }" />
+					<TextBlock
+						Style="{StaticResource SimulatorStackChoiceSilderText}"  
+						Text="{ Binding ElementName=SimualatorSliderYearDuration, Path=Value }" />
+				</StackPanel  >
 			</Grid>
 		</ScrollViewer>
 

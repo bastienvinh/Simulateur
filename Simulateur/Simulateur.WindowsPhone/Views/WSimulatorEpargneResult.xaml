@@ -83,9 +83,18 @@
 								</Grid.RowDefinitions>
 
 								<TextBlock FontSize="20" Grid.Column="1" Grid.Row="1" Text="{Binding BankBook.Name}" />
-								<TextBlock Grid.Column="1" Grid.Row="2" Text="Taux : " />
-								<!-- use converter here -->
-								<TextBlock Grid.Column="1" Grid.Row="3" Text="Totale :" />
+								
+								<StackPanel Orientation="Horizontal"
+									Grid.Column="1" Grid.Row="2">
+									<TextBlock  Text="Taux : " />
+									<TextBlock Text="{ Binding BankBook.Rate }" />
+								</StackPanel>
+								
+								<StackPanel Orientation="Horizontal"
+									Grid.Column="1" Grid.Row="3">
+									<TextBlock  Text="Totale :" />
+									<TextBlock Text="{Binding Total}" />
+								</StackPanel>
 
 							</Grid>
 						</Border>

@@ -13,7 +13,7 @@
 	<Style x:Name="SimulatorButtonNext" TargetType="Button">
 		<Setter Property="Padding" Value="0, 0, 0, 0" />
 		<Setter Property="Background" Value="Teal" />
-		<Setter Property="Width" Value="150" />
+		<Setter Property="Width" Value="140" />
 		<Setter Property="HorizontalAlignment" Value="Right" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="Margin" Value="0, 0, 20, 0" />
@@ -24,13 +24,13 @@
 		<Setter Property="FontSize" Value="35" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="HorizontalAlignment" Value="Center" />
-		<Setter Property="Width" Value="50" />
+		<Setter Property="Width" Value="75" />
 		<Setter Property="TextAlignment" Value="Center" /> 
 	</Style>
 	
 	<Style x:Name="SimulatorStackChoiceSlide" TargetType="Slider">
-		<Setter Property="Width" Value="300" />
-		<Setter Property="Margin" Value="20, 0, 0, 0" />
+		<Setter Property="Width" Value="260" />
+		<Setter Property="Margin" Value="10, 0, 0, 0" />
 	</Style>
 	
 	<!-- endregion -->

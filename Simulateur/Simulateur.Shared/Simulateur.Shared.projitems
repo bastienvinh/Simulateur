@@ -20,16 +20,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Business\Filter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\Manager\BankBookManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\Manager\FilterInformationsManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Business\ResultFilter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\Utils\TrashData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\NavigatorHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\DecimalConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StudentVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\TotalConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\BLL\BLLBankBooks.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\DTO\BankBook.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\DTO\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Utils\AzureConnectionUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultFilter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Navigation\MenuNavigation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\ItemClickCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VMMain.cs" />
@@ -39,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\fr-FR\Menus.resw" />

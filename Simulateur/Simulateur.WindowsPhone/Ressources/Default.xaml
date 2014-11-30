@@ -4,7 +4,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 	<converter:StudentVisibilityConverter x:Key="StudentVisibilityConverter" />
-	
+	<converter:DecimalConverter x:Key="DecimalConverter" />
 	
 	<!-- region All Styles -->
 	

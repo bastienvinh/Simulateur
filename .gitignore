@@ -10,3 +10,6 @@ Test/bin/*
 Test/obj/*
 EpargneMobileUnitTest/bin/*
 EpargneMobileUnitTest/obj/*
+EpargneAzureService/Properties/PublishProfiles/mobile$EpargneAzureService.pubxml
+EpargneAzureService/bin/*
+EpargneAzureService/obj/*

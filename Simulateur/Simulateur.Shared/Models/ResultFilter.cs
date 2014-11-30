@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Simulateur.Data;
 
-namespace Simulateur.Business
+namespace Simulateur.Models
 {
 	public class ResultFilter
 	{
